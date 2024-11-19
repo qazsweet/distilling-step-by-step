@@ -10,6 +10,18 @@ conda activate distill
 conda install -y pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
 pip install git+https://github.com/huggingface/transformers@v4.24.0 datasets sentencepiece protobuf==3.20.* tensorboardX
 ```
+
+tips:
+if ``` pip install git+https://github.com/huggingface/transformers@v4.24.0``` does not work, try  ``` pip install transformers==4.24.0```
+``` pip install "numpy<2"``` , or ```pip install numpy==1.24.1 ``` as numpy 2.0 as of October 25th 2024 could cause:
+```
+File "D:\anaconda3\envs\distill\lib\site-packages\transformers\trainer.py", line 3034, in evaluation_loop
+    losses = nested_numpify(losses_host)
+  File "D:\anaconda3\envs\distill\lib\site-packages\transformers\trainer_pt_utils.py", line 159, in nested_numpify
+    return t.numpy()
+RuntimeError: Numpy is not available
+```
+
 - Extract datasets to `datasets/`:
 ```
 unzip datasets.zip
