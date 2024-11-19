@@ -12,8 +12,8 @@ pip install git+https://github.com/huggingface/transformers@v4.24.0 datasets sen
 ```
 
 tips:
-if ``` pip install git+https://github.com/huggingface/transformers@v4.24.0``` does not work, try  ``` pip install transformers==4.24.0```
-``` pip install "numpy<2"``` , or ```pip install numpy==1.24.1 ``` as numpy 2.0 as of October 25th 2024 could cause:
+- if ``` pip install git+https://github.com/huggingface/transformers@v4.24.0``` does not work, try  ``` pip install transformers==4.24.0```
+- ``` pip install "numpy<2"``` , or ```pip install numpy==1.24.1 ``` as numpy 2.0 as of October 25th 2024 could cause:
 ```
 File "D:\anaconda3\envs\distill\lib\site-packages\transformers\trainer.py", line 3034, in evaluation_loop
     losses = nested_numpify(losses_host)
